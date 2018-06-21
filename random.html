@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title>RANDOM NUMBER</title>
+                <style>
+                        button{
+                                border: 1px solid #CD5C5C;
+                                border-radius:5px ;
+                                padding: 10px;
+                                font-family: "微软雅黑";
+                                float: left;
+                        }
+                        .txt{
+                                width: 100px;
+                                height: 25px;
+                                border: 1px solid #0000FF;
+                                padding: 5px;
+                                float: left;
+                                margin-left: 30px;
+                                border-radius: 5px;
+                        }
+                        .text{
+                        	margin-top: 20px;
+                        	margin-left: 250px;
+                        	width: 1000px;
+                            height: 25px;
+                        }
+                </style>
+                <script>
+                        window.onload = function(){
+                                var  oBtn = document.getElementById('btn');
+                                var oTxt  = document.getElementById('txt');
+                                  
+                                function rund(n,m){
+                                        return Math.floor(Math.random()*(m-n)+n);
+                                }
+                                function findInArr(n,arr){ 
+                                                for(var i=0; i<arr.length; i++){
+                                                                if( arr[i] == n){
+                                                                        return true
+                                                                }
+                                                }
+                                                return false;
+                                }
+  
+                                oBtn.onclick = function(){
+                                           var num = [];
+                                                while(num.length<3){
+                                                        var m = rund(0,10); 
+                                                         if(!findInArr(m,num)){
+                                                                 num.push(m)
+                                                         }
+                                                }
+                                         var str = num.splice(" ");
+                                              num = str.join(" ");
+                                         oTxt.innerHTML=num;
+                                }
+                        }
+                </script>
+        </head>
+        <body>
+                <button id="btn">获取编码</button>
+                <p class="txt" id="txt"></p>
+                <div class="text">获得编码后，烦请太太们截图私发给群主（@一个写着逼格的ID）！感谢各位人美心善的仙女合作！笔芯么么哒！</div>
+        </body>
+</html>
